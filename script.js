@@ -4,6 +4,8 @@ row.classList.add('row')
 const buttons = document.createElement('button')
 buttons.classList.add('button')
 let expression = '';
+const screen = document.querySelector('.screen')
+
 function addButtons(){
 
     let calcElement = ['+/-','del','AC','%',
@@ -51,6 +53,7 @@ function addButtons(){
                     expression += button.textContent
                     console.log(expression)
                 }
+                screen.textContent = expression
 
             })
             
@@ -58,6 +61,7 @@ function addButtons(){
         }
         
     }
+
 
 }
 
