@@ -47,6 +47,9 @@ function addButtons(){
                 }
                 else if (button.id == 'button-='){
 
+                    expression = evaluator(expression)
+                    screen.textContent = expression
+
                 }
                 else{
 
@@ -65,5 +68,43 @@ function addButtons(){
 
 }
 
+function evaluator(expr){
+
+    let operators = {
+        
+        '/': (a,b) => a/b,
+        '%': (a,b) => a%b,
+        '*': (a,b) => a*b,
+        '+': (a,b) => a+b,
+        '-': (a,b) => a-b,
+        
+    }
+    for (operator in operators){
+
+        if (expr.includes(operator)){
+
+            elements = expr.split(operator)
+            for (operand of elements){
+
+                if (operand.includes('.')){
+
+                    return operators[operator](parseFloat(elements[0]),parseFloat(elements[1]));
+
+                }
+                else{
+
+                    return operators[operator](parseInt(elements[0]),parseInt(elements[1]));
+
+                }
+
+            }
+
+        }
+
+    }
+    
+}
+
 addButtons()
+
 

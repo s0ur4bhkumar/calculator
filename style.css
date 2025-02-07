@@ -1,3 +1,9 @@
+.press-start-2p-regular {
+    font-family: "Press Start 2P", serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
 html, body{
     height: 100%;
     width: 100%;
@@ -31,8 +37,14 @@ body{
 
 .screen{
     border: 2px solid blue;
+    display: flex;
     border-radius: 12px;
     height: 100px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-family: 'Press start 2p';
+    font-size: xx-large;
+    
 }
 
 .buttonContainer{
